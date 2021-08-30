@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script type="text/javascript" src="desafio3.js"></script>
+	<title>Desafio3</title>
+</head>
+
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}	
+
+	body{
+		width: 500px;
+		height: 250px;
+		margin-top: 20px;
+		margin-left: 700px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border:1px solid #CFD8DC;
+		background-color: #FAFAFA;
+	}
+
+	div{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	#btn{
+		background-color: #81C784;
+		color: #fff;
+		font-family: verdana, arial, cursive;
+		padding: 9px;
+		border-radius: 3px;
+		border: none;
+		margin-top: 10px;
+		margin-right: 150px;
+	}
+
+	.cx{
+		padding: 5px;
+		margin-left: 16px;
+	}
+
+	.aln{
+		margin-left: 20px;
+	}
+
+	.aln1{
+		padding: 5px;
+		margin-right: 30px;
+	}
+
+
+</style>
+
+<body>
+	<main>
+		<div>
+			<p>Dígite o valor 1:  </p>
+				<input  id="v1"  class="cx" type="text" value="" name="valor1">
+		</div>
+		<div>
+			<p>Dígite o valor 2:  </p>
+				<input  id="v2" class="cx" type="text" value="" name="valor2">
+		</div>
+		<div>	
+			<p class="aln">Informe o resultado:</p>
+				<input id="s" class="aln1" type="text" value="" name="resultado" >
+		</div>
+		<div>	
+			<input type="button" id="btn" name="btn" value="CONFIRMAR RESULTADO">
+		</div>
+	</main>
+</body>
+</html>

@@ -1,0 +1,42 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+
+main {
+	width: 500px;
+	height: 400px;
+	margin: auto;
+	margin-top: 100px ;
+	background-color: #00838F;
+	display: flex;
+	padding: 5px;	
+	justify-content: space-between;
+	}
+
+.quadrado{
+	width: 150px;
+	height: 150px;
+	background-color: #AB47BC;
+	color: #000; 
+	font-family: verdana, arial, cursive;
+	font-weight: bold;
+	display: flex;
+	justify-content: center; 
+	align-items: center ;
+}
+
+.circ{
+	width: 150px;
+	height: 150px;
+	margin-top: 250px;
+	background-color: #FFB300;
+	color: #000; 
+	border-radius: 100%;
+	font-family: verdana, arial, cursive;
+	font-weight: bold;
+	display: flex;
+	justify-content: center; 
+	align-items: center;
+	margin-bottom: 0;
+}
