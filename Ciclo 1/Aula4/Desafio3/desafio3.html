@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Desafio3</title>
+</head>
+
+<style >
+	
+	body{
+		margin: 0;
+		padding: 0;
+		box-sizing: 0;
+	}
+
+	header, footer{
+		width: 100%;
+		height: 40px;
+		background-color: purple;
+		position: fixed;
+	}
+
+	header{
+		top: 0;
+		border-bottom: 1px solid #000;
+	}
+		
+
+	footer{
+		height: 60px;
+		border-top: 1px solid #000;
+		bottom: 0;
+
+	}
+
+	main{
+		width: 100%;
+		height: auto;
+		margin-top: 50px;
+		margin-left: 20px;
+		display: flex;
+	}
+
+	#content{
+		width: 100%;
+		margin: 10px;
+		flex-direction: column;
+	}
+
+	#quadrado{
+		width: 20px;
+		height: 20px;
+		background-color: #000;
+		bottom: 70px;
+		margin-left: 10px;
+		border: 1px solid purple;
+		position: fixed;
+	}
+
+	@media screen and (max-width: 700px){
+		main{
+			display: block;
+	}
+
+		#quadrado{
+			width: 0%;
+			height: 0;
+			border:none;
+		}
+	}
+
+</style>
+
+<body>
+	<header></header>
+	<main>
+		<div id="content">
+			<p>Lorem ipsum dolor, sit amet consectetur, adipisicing elit. Possimus sit nesciunt placeat, autem, voluptatum fugit quasi aliquam dolorum dicta sed, tempora. Doloremque facere, ipsa molestiae! Magnam nobis doloremque beatae sit?</p>
+
+			<p>Lorem ipsum dolor, sit amet consectetur, adipisicing elit. Possimus sit nesciunt placeat, autem, voluptatum fugit quasi aliquam dolorum dicta sed, tempora. Doloremque facere, ipsa molestiae! Magnam nobis doloremque beatae sit?</p>
+
+			<p>Lorem ipsum dolor, sit amet consectetur, adipisicing elit. Possimus sit nesciunt placeat, autem, voluptatum fugit quasi aliquam dolorum dicta sed, tempora. Doloremque facere, ipsa molestiae! Magnam nobis doloremque beatae sit?</p>
+
+			<p>Lorem ipsum dolor, sit amet consectetur, adipisicing elit. Possimus sit nesciunt placeat, autem, voluptatum fugit quasi aliquam dolorum dicta sed, tempora. Doloremque facere, ipsa molestiae! Magnam nobis doloremque beatae sit?</p>
+
+		</div>
+
+		<div id="content">
+			<p>Lorem ipsum dolor, sit amet consectetur, adipisicing elit. Possimus sit nesciunt placeat, autem, voluptatum fugit quasi aliquam dolorum dicta sed, tempora. Doloremque facere, ipsa molestiae! Magnam nobis doloremque beatae sit?</p>
+
+			<p>Lorem ipsum dolor, sit amet consectetur, adipisicing elit. Possimus sit nesciunt placeat, autem, voluptatum fugit quasi aliquam dolorum dicta sed, tempora. Doloremque facere, ipsa molestiae! Magnam nobis doloremque beatae sit?</p>
+
+			<p>Lorem ipsum dolor, sit amet consectetur, adipisicing elit. Possimus sit nesciunt placeat, autem, voluptatum fugit quasi aliquam dolorum dicta sed, tempora. Doloremque facere, ipsa molestiae! Magnam nobis doloremque beatae sit?</p>
+
+			<p>Lorem ipsum dolor, sit amet consectetur, adipisicing elit. Possimus sit nesciunt placeat, autem, voluptatum fugit quasi aliquam dolorum dicta sed, tempora. Doloremque facere, ipsa molestiae! Magnam nobis doloremque beatae sit?</p>
+		</div>
+		
+		<div id="quadrado"></div>
+
+	</main>
+	<footer></footer>
+</body>
+</html>

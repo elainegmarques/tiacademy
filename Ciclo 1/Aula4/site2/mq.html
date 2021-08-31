@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>mq</title>
+</head>
+
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	main{
+		display: flex;
+		width: 80%;
+		height: auto;
+		margin: 0 auto;
+		background-color: tomato;
+	}
+
+	.filho{
+		width: 50%;
+		height: auto;
+		background-color: yellow;
+	}
+
+	@media screen and (max-width: 700px){
+		main{
+			flex-direction: column;
+		}
+		.filho{
+			width: 100%;
+		}
+	}
+</style>
+<body>
+	
+	<main>
+		
+		<div class="filho">
+			<p>Lorem ipsum dolor sit, amet consectetur adipisicing, elit. Facilis minima architecto, error accusamus rerum quas ea mollitia minus pariatur in voluptatum quis inventore. Excepturi nostrum suscipit doloribus dolorem, enim, natus?</p>
+		</div>
+
+		<div class="filho">
+			<p>Lorem ipsum dolor sit, amet consectetur adipisicing, elit. Facilis minima architecto, error accusamus rerum quas ea mollitia minus pariatur in voluptatum quis inventore. Excepturi nostrum suscipit doloribus dolorem, enim, natus?</p>
+		</div>
+		
+	</main>
+
+</body>
+</html>
