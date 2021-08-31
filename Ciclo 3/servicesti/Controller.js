@@ -11,52 +11,135 @@ let cliente=models.Cliente;
 let servico=models.Servico;
 let pedido=models.Pedido;
 
+app.post('/servicos',async(req,res)=>{
+    let create=await servico.create(
+         req.body
+    );
+    res.send('Serviço foi inserido!');
+});
+
+//DesafioAula3:
+app.post('/clientes',async(req,res)=>{
+    let create=await cliente.create(
+        req.body
+        );
+    res.send('Cliente foi inserido!');
+});
+
+//DesafioAula3:
+app.post('/pedidos',async(req,res)=>{
+    let create=await pedido.create(
+        req.body
+        );
+    res.send('Pedido foi inserido!');
+});
+
 app.get('/', function(req,res){
     res.send('Olá Mundo!');
 });
 
-app.get('/clientes', async(req,res)=>{
-    let create=await cliente.create({
-        nome: "Elaine Marques",
-        endereco: "Rua cinco, 757",
-        cidade: "Maringá",
-        uf: "PR",
-        nascimento: "1989-02-15"
+app.get('/Listacliente', function(req,res){
+    res.send('Lista de clientes!');
+});
+
+app.get('/Listapedido', function(req,res){
+    res.send('Lista de pedidos!');
+});
+
+app.get('/Listaservico', function(req,res){
+    res.send('Lista de serviços!');
+});
+
+app.get('/listaservicos', async(req,res)=>{
+    await servico.findAll({
+     //   raw:true
+        order: [['nome','DESC']]
+    }).then(function(servicos){
+        res.json({servicos})
     });
-        res.send("Clientes foi inserido!");
 });
 
-app.get('/clientes01', function(req,res){
-    res.send('Lista de cliente');
+app.get('/ofertas', async(req,res)=>{
+    await servico.count('id')
+    .then(function(servicos){
+        res.json(servicos);
+    });
 });
 
-app.get('/servicos01', function(req,res){
-    res.send('Servico solicitado');
+app.get('/servico/:id', async(req,res)=>{
+    servico.findByPk(req.params.id)
+    .then(servico =>{
+        return res.json({
+            error: false,
+            servico
+        });
+    }).catch(function(erro){
+        return res.status(400).json({
+            error:true,
+            message: "Código não cadastrado!"
+        });
+    });
 });
 
-app.get('/pedidos01', function(req,res){
-    res.send('Pedido efetuado');
+//ex1:
+app.get('/listaclientes', async(req,res)=>{
+    await cliente.findAll({
+        raw:true
+    }).then(function(clientes){
+        res.json({clientes})
+    });
+}); 
+
+//ex2:
+app.get('/clientesantq', async(req,res)=>{
+    await cliente.findAll({
+        order: [['createdAt']]
+    }).then(function(clientes){
+        res.json({clientes})
+    });
 });
 
-app.post('/servicos', async(req,res)=>{
-    let create=await servico.create(
-       req.body
-    );
-        res.send("Serviço foi inserido!");
+//ex3:
+app.get('/listapedidos', async(req,res)=>{
+    await pedido.findAll({
+        raw:true
+    }).then(function(pedidos){
+        res.json({pedidos})
+    });
+}); 
+
+//ex4:
+app.get('/listavalor', async(req,res)=>{
+    await pedido.findAll({  
+        order: [['valor','DESC']]
+    }).then(function(pedidos){
+        res.json({pedidos})
+    });
+}); 
+
+
+//ex5:
+app.get('/qtdclientes', async(req,res)=>{
+    await cliente.count('id')
+    .then(function(clientes){
+        res.json(clientes);
+    });
 });
 
-app.post('/clientes', async(req,res)=>{
-    let create=await cliente.create(
-        req.body
-    );
-        res.send("Cliente foi inserido!");
+//ex6:
+app.get('/qtdpedidos', async(req,res)=>{
+    await pedido.count('id')
+    .then(function(pedidos){
+        res.json(pedidos);
+    });
 });
 
-app.post('/pedidos', async(req,res)=>{
-    let create=await pedido.create(
-        req.body
-    );
-        res.send("Pedido foi inserido!");
+//DesafioAula4:
+app.get('/valorpedidos/:id', async(req,res)=>{
+    await pedido.sum('valor', { where: { ClienteId:(req.params.id)} 
+    }).then(function(pedidos){
+        res.json(pedidos);
+    });
 });
 
 let port=process.env.PORT || 3000;

@@ -10,14 +10,13 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
       Cliente.hasMany(models.Pedido);
     }
   };
   Cliente.init({
     nome: DataTypes.STRING(50),
     endereco: DataTypes.STRING,
-    cidade: DataTypes.STRING, 
+    cidade: DataTypes.STRING,
     uf: DataTypes.STRING(2),
     nascimento: DataTypes.DATEONLY
   }, {
