@@ -1,0 +1,29 @@
+{
+  "name": "servicesti",
+  "version": "1.0.0",
+  "description": "Sistema de controle de uma empresa de ti",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elainegmarques/tiacademy.git"
+  },
+  "author": "Elaine",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elainegmarques/tiacademy/issues"
+  },
+  "homepage": "https://github.com/elainegmarques/tiacademy#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mysql2": "^2.3.0",
+    "sequelize": "^6.6.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12",
+    "sequelize-cli": "^6.2.0"
+  }
+}
